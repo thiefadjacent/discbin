@@ -16,9 +16,11 @@ if [ -n "${hook}" ]; then
         echo "#$hook" >> "$script_path"
 fi
 
+msg="$(jq -n --arg var "$stdin"  '.content = $var')"
+
 curl -g -X POST "$hook" \
 -H 'Content-type: application/json; charset=utf-8' \
--d "{\"content\": \"$stdin\"}"
+-d "$msg"
 
 # Saved Webhook (auto updates):
 #https://discord.com/api/webhooks/
