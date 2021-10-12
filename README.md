@@ -1,6 +1,5 @@
 # discbin
-Bash utility for sending any command's output to a discord webhook 
-
+Bash utility for sending any command's output to a discord webhook.
 
 For example, the command
 `cat example.txt | discbin https://discord.com/api/webhooks/example`
